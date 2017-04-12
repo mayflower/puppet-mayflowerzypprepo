@@ -1,23 +1,28 @@
-# = Class: mayflowerzypprepo
-#
-# This is the mayflower zypper repo class
+# Mayflower zypper repo class
 #
 # This class will install SLES Repos and the Mayflower Repos
 #
-# == Parameters
+# @summary Installs SLES Repos and the Mayflower Repos
 #
-# == Examples
+# @example Install SLES repos with the URLs given
+# class { 'mayflowerzypprepo':
+#   enable_sle => true,
+#   sle_url    => "http://your.sles.mirror.here/SLES/11_SP4",
+#   enable_sdk => true,
+#   sdk_url    => "http://your.sles.mirror.here/SLES_SDK/11_SP4",
+# }
 #
-# Call mayflowerzypprepo as a parametrized class:
-#
-# class { 'mayflowerzypprepo' : }
-#
+# @param enable_sle Enables the SLES repo
+# @param sle_url URL of the SLES repo
+# @param enable_sdk Enables the SLES SDK repo
+# @param sdk_url URL of the SLES SDK repo
+# @param enable_nodejs Enabled the Mayfloer Node.js repo
 class mayflowerzypprepo (
-  $enable_sle    = false,
-  $sle_url       = undef,
-  $enable_sdk    = false,
-  $sdk_url       = undef,
-  $enable_nodejs = false,
+  Boolean $enable_sle    = false,
+  String  $sle_url       = undef,
+  Boolean $enable_sdk    = false,
+  String  $sdk_url       = undef,
+  Boolean $enable_nodejs = false,
 ) {
   $major_version  = regsubst($::operatingsystemrelease,'^(\d+)\.(\d+)','\1')
   $service_pack   = regsubst($::operatingsystemrelease,'^(\d+)\.(\d+)','SP\2')

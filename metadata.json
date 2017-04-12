@@ -1,0 +1,36 @@
+{
+  "name": "mayflower-mayflowerzypprepo",
+  "version": "1.0.0",
+  "author": "Mayflower GmbH",
+  "summary": "Adds some zypper repos",
+  "license": "Apache-2.0",
+  "source": "https://github.com/mayflower/puppet-mayflowerzypprepo",
+  "project_page": "https://github.com/mayflower/puppet-mayflowerzypprepo",
+  "issues_url": "https://github.com/mayflower/puppet-mayflowerzypprepo/issues",
+  "dependencies": [
+    {
+      "name": "darin-zypprepo",
+      "version_requirement": ">= 1.0.2 < 2.0.0"
+    },
+    {
+      "name": "stschulte-rpmkey",
+      "version_requirement": ">= 1.0.3 < 2.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "11",
+        "12"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.6.1 < 5.0.0"
+    }
+  ],
+  "description": "Adds some zypper repos."
+}
